@@ -30,6 +30,8 @@
 #include "EPD_Test.h"
 #include "EPD_3in7g.h"
 
+//#define 1
+
 int EPD_3in7g_test(void)
 {
     printf("EPD_3IN7G_test Demo\r\n");
@@ -37,10 +39,14 @@ int EPD_3in7g_test(void)
         return -1;
     }
 
-    printf("e-Paper Init and Clear...\r\n");
+    /*printf("e-Paper Init and Clear... PERSELE\r\n");
     EPD_3IN7G_Init();
     EPD_3IN7G_Clear(EPD_3IN7G_WHITE); // White
-    DEV_Delay_ms(2000);
+    DEV_Delay_ms(2000);*/
+	
+	Paint_SelectImage(BlackImage);
+    GUI_ReadBmp_RGB_4Color("./pic/3.7inch-G.bmp", 0, 0);
+    EPD_3IN7G_Display(BlackImage);
 
     //Create a new image cache
     UBYTE *BlackImage;
