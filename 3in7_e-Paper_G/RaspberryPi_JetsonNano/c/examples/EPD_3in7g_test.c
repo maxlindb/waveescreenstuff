@@ -71,19 +71,19 @@ int EPD_3in7g_test(void)
 #endif
 
     Paint_SelectImage(BlackImage);
-    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0001.bmp", 0, 0);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0001.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
 	Paint_SelectImage(BlackImage);
-    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0002.bmp", 0, 0);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0002.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
 	Paint_SelectImage(BlackImage);
-    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0003.bmp", 0, 0);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0003.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
 	Paint_SelectImage(BlackImage);
-    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0004.bmp", 0, 0);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0004.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 
 
