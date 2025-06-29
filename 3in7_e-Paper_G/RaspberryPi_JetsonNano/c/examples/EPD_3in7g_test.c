@@ -70,21 +70,35 @@ int EPD_3in7g_test(void)
     DEV_Delay_ms(2000);
 #endif
 
-    Paint_SelectImage(BlackImage);
+    //Paint_SelectImage(BlackImage);
+    printf("Show first frame");
     GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0001.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
-	Paint_SelectImage(BlackImage);
+    printf("Show second frame");
+	  //Paint_SelectImage(BlackImage);
     GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0002.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
-	Paint_SelectImage(BlackImage);
+    printf("Show third frame?");
+	  //Paint_SelectImage(BlackImage);
     GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0003.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
 	
-	Paint_SelectImage(BlackImage);
+    printf("Show fourth frame???");
+	  //Paint_SelectImage(BlackImage);
     GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame_0004.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
+    
+    for(int i = 5;i < 27;i++){
+      printf("Frame %02d\n",i);
+      
+      char filename[64];
+      snprintf(filename,sizeof(filename),"./pic/bikeidiot_seq/frame_%04d.bmp",i);
+      
+      GUI_ReadBmp_RGB_4Color(filename, 0, 0);
+      EPD_3IN7G_Display(BlackImage);
+    }
 
 
 
@@ -119,7 +133,7 @@ int EPD_3in7g_test(void)
     Paint_DrawLine(105, 75, 105, 115, EPD_3IN7G_YELLOW, DOT_PIXEL_1X1, LINE_STYLE_DOTTED);
     Paint_DrawString_EN(10, 0, "Red,yellow,white and black", &Font16, EPD_3IN7G_RED, EPD_3IN7G_YELLOW);
     Paint_DrawString_EN(10, 20, "Four color e-Paper", &Font12, EPD_3IN7G_YELLOW, EPD_3IN7G_BLACK);
-    Paint_DrawString_CN(150, 20, "Î¢Ñ©µç×Ó", &Font24CN, EPD_3IN7G_RED, EPD_3IN7G_WHITE);
+    Paint_DrawString_CN(150, 20, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, EPD_3IN7G_RED, EPD_3IN7G_WHITE);
     Paint_DrawNum(10, 35, 123456, &Font12, EPD_3IN7G_RED, EPD_3IN7G_WHITE);
 
     printf("EPD_Display\r\n");
