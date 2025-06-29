@@ -1,0 +1,1 @@
+ffmpeg -i bikeidiot.mp4 -r 5 -vf scale=416:240,transpose=1 bikeidiot_seq/frame_%04d.bmp
