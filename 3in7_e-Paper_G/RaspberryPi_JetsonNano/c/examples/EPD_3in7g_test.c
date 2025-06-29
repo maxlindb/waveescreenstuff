@@ -70,6 +70,24 @@ int EPD_3in7g_test(void)
     DEV_Delay_ms(2000);
 #endif
 
+    Paint_SelectImage(BlackImage);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0001.bmp", 0, 0);
+    EPD_3IN7G_Display(BlackImage);
+	
+	Paint_SelectImage(BlackImage);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0002.bmp", 0, 0);
+    EPD_3IN7G_Display(BlackImage);
+	
+	Paint_SelectImage(BlackImage);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0003.bmp", 0, 0);
+    EPD_3IN7G_Display(BlackImage);
+	
+	Paint_SelectImage(BlackImage);
+    GUI_ReadBmp_RGB_4Color("./pic/bikeidiot_seq/frame0004.bmp", 0, 0);
+    EPD_3IN7G_Display(BlackImage);
+
+
+
 #if 0   // show bmp
     EPD_3IN7G_Init_Fast();
     printf("show BMP-----------------\r\n");
