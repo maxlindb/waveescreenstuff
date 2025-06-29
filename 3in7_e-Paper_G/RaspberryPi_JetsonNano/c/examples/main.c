@@ -26,7 +26,8 @@ int main(void)
 //     printf("Don't know which program you need to run? Refer to the user manual (Wiki) and main.c \r\n");
 // #endif
 
-EPD_3in7g_test(); 
+    //EPD_3in7g_test();
+    maxTest();
     
     return 0;
 }
