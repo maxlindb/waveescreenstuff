@@ -50,7 +50,8 @@ int maxTest(void){
     }
     
     printf("e-Paper Init and Clear... maxtest\r\n");
-    EPD_3IN7G_Init();    
+    //EPD_3IN7G_Init();
+    EPD_3IN7G_Init_Fast();        
     EPD_3IN7G_Clear(EPD_3IN7G_WHITE); // White
     DEV_Delay_ms(2000);
     
@@ -69,6 +70,7 @@ int maxTest(void){
     
     long elapsed_ms = -1;
     
+    
     for(int i = 0; i < 4; i++) {
       clock_gettime(CLOCK_MONOTONIC, &t0);
     
@@ -85,19 +87,19 @@ int maxTest(void){
         
         clock_gettime(CLOCK_MONOTONIC, &t1);
         elapsed_ms = diff_in_ms(t0,t1);      
-      }
- 
+      } 
     }
     
-    EPD_3IN7G_Init_Fast();    
+    
+    //EPD_3IN7G_Init_Fast();    
     Paint_NewImage(BlackImage, EPD_3IN7G_WIDTH, EPD_3IN7G_HEIGHT, 90, EPD_3IN7G_WHITE);
     Paint_SetScale(4);
     Paint_SelectImage(BlackImage);
-    GUI_ReadBmp_RGB_4Color("./pic/flop.bmp", 0, 0);
+    GUI_ReadBmp_RGB_4Color("./pic/flop_rot.bmp", 0, 0);
     EPD_3IN7G_Display(BlackImage);
     
     DEV_Delay_ms(5000);
-    Paint_DrawString_EN(200, 150, "prööt", &Font16, EPD_3IN7G_RED, EPD_3IN7G_YELLOW);
+    Paint_DrawString_EN(200, 150, "proot", &Font16, EPD_3IN7G_RED, EPD_3IN7G_YELLOW);
     EPD_3IN7G_Display(BlackImage);
 
     printf("WAIT\r\n");
